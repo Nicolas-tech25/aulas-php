@@ -85,5 +85,36 @@
     <p><?=saudacao("bom dia", "Melissa")?></p>
     <p><?=saudacao("boa tarde", "Tanaka")?></p>
     <p><?=saudacao("boa noite", "Neymar")?></p>
+
+    <h2>Indução de tipos de dados</h2>
+
+    <?php
+    /* tipos de dados mais comuns:
+    string -> caracteres em geral 
+    int -> números inteiros
+    float -> números com casas decimais
+    array -> vetor */
+
+    /* Indução de tipos deve ser veita nos parâmetros e no retorno da função.
+    
+    Isso auxiliará na entrada/saída de dados manipulados pela função*/
+
+
+    function verifica_negativo(int $valor):string {
+        /*Early return*/
+        if ($valor < 0) {
+            return "É negativo";
+        } else {
+            return "Não é negativo";
+        }
+        
+    }
+    ?>
+<!-- Código abaixo dá erro ao usar indução de tipos: 
+ <p>Número 50: verifica_negativo("TEXTO") </p> -->
+    <p>Número 10: <?=verifica_negativo(10)?></p>
+    <p>Número -10: <?=verifica_negativo(-10)?></p>
+    <p>Número 50: <?=verifica_negativo(50)?></p>
+    
 </body>
 </html>
