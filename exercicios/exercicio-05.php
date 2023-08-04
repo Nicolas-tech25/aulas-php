@@ -16,16 +16,18 @@
     </style>
 </head>
 <body>
+
     <?php
        $nota01 = 0;
        $nota02 = 0;
+       
 
        function calculo(int $nota01,$nota02){
         $media = ($nota01 + $nota02)/2;
         return $media;
     }
 
-    $calculo_da_média = calculo(7,7)
+    $calculo_da_média = calculo(7,5)
     ?>
 
     <?php
@@ -37,6 +39,7 @@
                 }
             }
        ?>
+
        <p>Média final: <b class="nota"><?=$calculo_da_média?></b></p>
        <p>Situação: <?=resultado($calculo_da_média)?></p>
 </body>
