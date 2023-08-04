@@ -34,10 +34,67 @@
 
     <p><?=$fraseFeia?></p>
     <p><?=$fraseBunitinha?></p>
+
+    <h3>explode()</h3>
+    <?php
+    // Função que transforma uma string em um array
+    $linguagem = "HTML - CSS - JS - PHP";
+    $arraylinguagem = explode(" - ",$linguagem);
+    ?>
+
+    <pre><?=var_dump($linguagem)?></pre>
+    <pre><?=var_dump($arraylinguagem)?></pre>
     <hr>
 
     <h2>Numéricos</h2>
+    <h3>min, máx</h3>
+    <?php
+    $valores = [10,5,50,1000,275];
+    $valorQualquer = 1259.75;
+    ?>
+
+    <p>Menor valor: <?=min($valores)?></p>
+    <p>Maior valor: <?=max($valores)?></p>
+    <p>Arredondamento: <?=round($valorQualquer)?></p>
+
+    <hr>
+
     <h2>Arrays</h2>
+    <h3>implode()</h3>
+    <?php
+    // Função que transforma array em string
+    $tropas = ["tropa do mais novo","tropa do amor","tropa da revoada"];
+    $textotropas = implode(" - ",$tropas);
+    ?>
+
+    <pre><?=var_dump($tropas)?></pre>
+    <pre><?=var_dump($textotropas)?></pre>
+
+    <h3>extract()</h3>
+    <?php
+    // Função que extai chaves associativas  para variáveis
+    $aluno = [
+        "id" => 1,
+        "nome" => "Chaves do 8",
+        "idade" => 25
+    ];
+
+    extract($aluno)
+    ?>
+
+    <ul>ID: <?=$id?></ul>
+    <ul>Nome: <?=$nome?></ul>
+    <ul>Idade: <?=$idade?></ul>
+
+    <h3>array_sum()</h3>
+    <?php
+    // Funsão para Soma
+    $total = array_sum($valores)
+    ?>
+    <p>Soma dos valores: <?=$total?></p>
+
+    <h3>array_unique()</h3>
+    <hr>
     <h2>Filtros</h2>
     <h2>Segurança</h2>
 </body>
