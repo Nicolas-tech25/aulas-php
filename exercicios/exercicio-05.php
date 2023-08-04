@@ -13,7 +13,6 @@
     <?php
        $nota01 = 0;
        $nota02 = 0;
-       $nota;
 
        function calculo(int $nota01,$nota02){
         $media = ($nota01 + $nota02)/2;
