@@ -94,6 +94,17 @@
     <p>Soma dos valores: <?=$total?></p>
 
     <h3>array_unique()</h3>
+    <?php
+    // Função de retorno de dados unicos
+    $produtos = ["Tv","Notebook","Tv","Geladeira", "monitor", "Notbook","Teclado","Mouse"];
+
+    $produtosUnicos = array_unique($produtos);
+    ?>
+
+    <pre><?=var_dump($produtos)?></pre>
+    <pre><?=var_dump($produtosUnicos)?></pre>
+
+
     <hr>
     <h2>Filtros</h2>
     <h2>Segurança</h2>
