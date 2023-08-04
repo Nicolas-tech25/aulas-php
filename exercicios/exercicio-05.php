@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercicio 05</title>
     <style>
+        body{
+            background-color: black;
+            color: aliceblue;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .nota{color: darkorange;}
         .aprovado{color: green;}
         .reprovado{color: red;}
     </style>
@@ -17,23 +23,21 @@
        function calculo(int $nota01,$nota02){
         $media = ($nota01 + $nota02)/2;
         return $media;
-    }?>
-
-       <p>Média final: <?=calculo(7,4)?></p>
-       
-       <?php
-
-       if (calculo($nota01,$nota02) > 7) {?>
-
-         <p>echo e você foi <b class="aprovado">APROVADO</b> </p>
-       <?php
-       }else {?>
-
-        <p>e você foi <b class="reprovado">REPROVADO</b></p>
-
-    <?php
     }
+
+    $calculo_da_média = calculo(7,7)
     ?>
 
+    <?php
+            function resultado($media){
+                if ($media >= 7) {
+                    return "<b class = 'aprovado'>Aprovado</b>";
+                }else{
+                    return "<b class = 'reprovado'>Reprovado</b>";
+                }
+            }
+       ?>
+       <p>Média final: <b class="nota"><?=$calculo_da_média?></b></p>
+       <p>Situação: <?=resultado($calculo_da_média)?></p>
 </body>
 </html>
