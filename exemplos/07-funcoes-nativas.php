@@ -137,5 +137,44 @@ a função abaixo retornará "false". */
     echo $ataquesanitizado;
     ?>
 
+    <hr>
+
+    <h2>Segurança (criptografia de dados)</h2>
+
+    <?php
+    //Senha em texto puro (plain text)
+    $senha = "123senac";
+
+    /* Algoritimos mais comuns para criptografia:
+    MDS, SHA1, SHA256
+    Estes algoritimos pegam dados e os codificam, tornando um "hash" de dos embaralhados*/
+
+    $senha_MD5 = md5($senha);
+    $senha_SHA1 = md5($senha);
+    $SHA256 = md5('sha256',$senha);
+    ?>
+
+    <p>Senha (texto puro): <?=$senha?> </p>
+    <p>Senha (MD5): <?=$senha_MD5?></p>
+    <p>Senha (SHA1): <?=$senha_SHA1?></p>
+    <p>Senha (SHA256): <?=$senhaSHA256?></p>
+
+    <?php
+    /* Metódo recomendado para segurança de senhas no PHP. */
+    $Senha_segura = password_hash($senha, PASSWORD_DEFAULT);
+    ?>
+    <p>Senha (com password_hash): <?=$Senha_segura?></p> 
+    
+    <?php
+    /* Como verificar o hash da senha se ele pode mudar? */
+
+    $senha_Digitada = "123Senac";
+
+    if (password_verify($senha_Digitada, $Senha_segura)) {
+        echo "senha correta, pode entrar...";
+    }else{
+        echo "senha errada, vaza daqui disgraça";
+    }
+    ?>
 </body>
 </html>
