@@ -1,3 +1,6 @@
+<?php
+include "recursos.php"
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,7 +13,7 @@
     </style>
 </head>
 <body>
-    <h1>Trabalhando com PHP</h1>
+    <h1>Trabalhando com PHP - <?=ESCOLA?></h1>
     <hr>
     <?php
         // Geração de texto (string)
