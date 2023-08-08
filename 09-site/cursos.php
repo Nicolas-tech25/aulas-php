@@ -1,4 +1,5 @@
-<?php require "includes/cabecalho.php"?>
+<?php $titulo = "Cursos"; 
+require "includes/cabecalho.php"?>
         <h2>Página de cursos</h2>
         
         <p>veja os cursos disponíveis</p>
