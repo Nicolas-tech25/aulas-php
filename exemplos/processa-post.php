@@ -27,7 +27,12 @@
     <ul>
         <li>Nome: <?=$nome?></li>
         <li>Email: <?=$email?></li>
+
+        <!-- se a variável mensagem NÃO ESTIVER VAZIA, mostre o <li> com a mensagem -->
+        <?php if( !empty($mensagem)){?>
         <li>Mensagem: <?=$mensagem?></li>
+
+    <?php } ?>
     </ul>
 <?php
 }
