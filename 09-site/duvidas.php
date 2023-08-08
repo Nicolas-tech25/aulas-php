@@ -7,7 +7,7 @@
         </details>
         <details>
             <summary>Os cursos são gratuitos?</summary>
-            <p>Não.</p>
+            <p>Não. </p>
         </details>
 
     <?php require "includes/footer.php"?>
