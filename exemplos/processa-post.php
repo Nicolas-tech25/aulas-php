@@ -30,7 +30,7 @@
         <li>Nome: <?=$nome?></li>
         <li>Email: <?=$email?></li>
         <li>Idade: <?=$idade?></li>
-        <li>Interesses: <?=implode("| ",$interesses)?></li>
+        <li>Interesses: <?=implode(", ",$interesses)?></li>
 
         <!-- se a variável mensagem NÃO ESTIVER VAZIA, mostre o <li> com a mensagem -->
         <?php if( !empty($mensagem)){?>
