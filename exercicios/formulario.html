@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="../exercicios/CSS/estilo-07.css">
+</head>
+<body>
+
+    <h1>Mercadão</h1>
+    <hr>
+    
+    <!-- Formulário com nome do produto, fabricante, preço, disponibilidade e descrição -->
+
+    <article class="container">
+
+    <form action="exercicio-07.php" method="post">
+
+            <p>
+                <label for="nome_produto">Nome do produto: </label>
+                <input required type="text" name="nome" id="nome">
+            </p>
+
+            <p>
+                <label for="nome_marca">Fabricante: </label>
+                <select name="marca" id="marca">
+                    <option value="marca">Nike</option>
+                    <option value="marca">Lacoste</option>
+                    <option value="marca">Armani</option>
+                    <option value="marca">Thommy</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="preco">preco: </label>
+                <input required  type="number" name="preco" id="idade" min="100" max="10000">
+            </p>
+
+            <div>
+                <p>Disponibilidade: <br></p>
+                <input type="radio" name="resposta" id="sim" value="sim">
+                <label for="sim">Sim</label>
+                <input type="radio" name="resposta" id="nao" value="nao">
+                <label for="nao">Não</label>
+            </div>
+
+            <!-- Texto da descrição: esta camisa prescisa ser embalada como de presente ao meu irmão!!! -->
+
+            <p>
+                <label for="descricao">descricao: </label> <br>
+                <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
+            </p>
+
+            <button type="submit" name="enviar" id = "enviar">Enviar</button>
+        </form>
+    </article>
+</body>
+</html>
