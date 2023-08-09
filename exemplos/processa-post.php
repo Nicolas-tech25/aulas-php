@@ -44,8 +44,18 @@
                 <li>Nome: <?= $nome ?></li>
                 <li>E-mail: <?= $email ?></li>
                 <li>Idade: <?= $idade ?></li>
+                
+                <!-- Versão  2: acessando cada interesse existente no array usando loop  -->
                 <li>Interesses: <?= implode(", ", $interesses) ?></li>
+                <li>Interesses: 
+                    <ul>
+                        <?php foreach($interesses as $interesse){?>
+                            <li><?=$interesse?></li>
+                        <?php } ?>
+                    </ul>
+                </li>
             </ul>
+
     <?php
         }
     }
