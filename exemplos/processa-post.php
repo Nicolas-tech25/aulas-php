@@ -19,26 +19,22 @@
 
     <?php
     } else {
-        $nome = $_POST['nome'];
-        $email = $_POST['email'];
-        $idade = $_POST['idade'];
-        $mensagem = $_POST['mensagem'];
+        // $nome = filter_input(INPUT_POST , "nome", FILTER_SANITIZE_SPECIAL_CHARS);
+        $nome = filter_input(INPUT_POST , "nome", FILTER_SANITIZE_SPECIAL_CHARS);
+        $email = filter_input(INPUT_POST , "email", FILTER_SANITIZE_SPECIAL_CHARS);
+        $idade = filter_input(INPUT_POST , "idade", FILTER_SANITIZE_NUMBER_INT);
 
+        $mensagem = filter_input(INPUT_POST , "mensagem", FILTER_SANITIZE_SPECIAL_CHARS);
         // Se houver interesses (ou seja, foi selecionado pelo menos 1)
         // guarde na variável $interesses. Caso contrário, guarde um array vazio.
-        
-        if (isset($_POST['interesses'])) {
-            $interesses = $_POST['interesses'];
-        } else {
-            $interesses = array();
-        }
 
-        if (empty($interesses)) {?>
-            <p>Por favor, selecione pelo menos um interesse.</p>
-            <p><a href="10-formulario.html">Voltar</a></p>
-    <?php        
-        } else {
-    ?>
+        //$interesses = $_POST["interesses"] ?? [] 
+        $interesses = filter_var_array(
+            $_POST["interesses"] ?? [],
+            FILTER_SANITIZE_SPECIAL_CHARS
+        );
+    }
+        ?>
             <h2>Dados</h2>
             <ul>
                 <li>Nome: <?= $nome ?></li>
@@ -47,20 +43,16 @@
                 
                 <!-- Versão  2: acessando cada interesse existente no array usando loop  -->
                 <li>Interesses: <?= implode(", ", $interesses) ?></li>
-                <li>Interesses: 
+                
+                <!-- <li>Interesses: 
                     <ul>
-                        <?php foreach($interesses as $interesse){?>
-                            <li><?=$interesse?></li>
-                        <?php } ?>
+                        <php foreach($interesses as $interesse){?>
+                            <li><=$interesse?></li>
+                        <php } ?>
                     </ul>
-                </li>
-            </ul>
+                </li> -->
 
-    <?php
-        }
-    }
-    ?>
-
-    
+                <li>Mensagem: <?=$mensagem?></li>
+            </ul>       
 </body>
 </html>
