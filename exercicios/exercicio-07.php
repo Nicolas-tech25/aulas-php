@@ -14,7 +14,7 @@
 
     <?php
 
-    $fabricantes = ["nike","lacoste","armani","thommy"];
+    $fabricantes = ["Nike","Lacoste","Armani","Thommy"];
 
   if($_SERVER["REQUEST_METHOD"] === "POST"){
     if(empty($_POST["produto"]) || empty($_POST["preco"])){ ?>
