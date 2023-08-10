@@ -6,7 +6,9 @@
     <title>POST Exercício 07</title>
 </head>
 <body>
-    <h1 class="text-center">Mercadão</h1>
+    <h1 class="text-center text-white pt-3">Mercadão</h1>
+
+    <hr class="text-white">
     <?php
 
     $fabricantes = ["Nike","Lacoste","Armani","Thommy"];
