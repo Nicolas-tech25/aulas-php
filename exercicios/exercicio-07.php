@@ -22,19 +22,16 @@
         $fabricante = filter_var($_POST['marca'], FILTER_SANITIZE_SPECIAL_CHARS);
         $preco = filter_var($_POST['preco'], FILTER_SANITIZE_NUMBER_INT);
 
-        $descricao = filter_var($_POST[ 'descricao'], FILTER_SANITIZE_SPECIAL_CHARS);
-        
-        // $resposta = filter_var_array(
-        //     $_POST["resposta"] ?? [],
-        //     FILTER_SANITIZE_SPECIAL_CHARS
-        // );
+        $descricao = filter_var($_POST[ 'descricao'], FILTER_SANITIZE_SPECIAL_CHARS);  
+
+        $disponibilidade = isset($_POST['disponibilidade']) ? $_POST['disponibilidade'] : "Escolha uma opção!!";
     } ?>
 
     <ul>
-        <li>Nome do produto: <?=$nome?></li>
+        <li>Nome do produto: <?=$produto?></li>
         <li>Fabricante: <?=$fabricante?></li>
         <li>Preço: <?=number_format($preco, 2,'.', '')?></li>
-        <li>Disponibilidade: <?=implode("," , $disponibilidade)?></li>
+        <li>Disponibilidade: <?=$disponibilidade?></li>
         <li>Descrição: <?=$descricao?></li>
     </ul>
 </body>
