@@ -6,12 +6,7 @@
     <title>POST Exercício 07</title>
 </head>
 <body>
-    <h1>POST</h1>
-    <hr>
-    <p>Processo de dados via POST.</p>
-
-    <h2>Dados recebidos</h2>
-
+    <h1 class="text-center">Mercadão</h1>
     <?php
 
     $fabricantes = ["Nike","Lacoste","Armani","Thommy"];

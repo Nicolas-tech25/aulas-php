@@ -8,17 +8,13 @@
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   </head>
-  <body>
+  <body class="bg-primary">
 
-    <h1>Mercadão</h1>
     <hr>
-
-    <!-- Card do bootstrap -->
-
     
     <!-- Formulário com nome do produto, fabricante, preço, disponibilidade e descrição -->
 
-    <article class="container-fluid bg-primary">
+    <article class="container-fluid rounded bg-warning bg-gradient py-2">
 
     <form action="exercicio-07.php" method="post">
 
@@ -62,7 +58,7 @@
                 <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
             </p>
 
-            <button type="submit" name="enviar" id = "enviar">Enviar</button>
+            <button type="subimit" class="btn btn-primary d-flex m-auto">Enviar</button>
         </form>
     </article>
 
