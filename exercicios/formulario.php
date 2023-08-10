@@ -14,7 +14,7 @@
     
     <!-- Formulário com nome do produto, fabricante, preço, disponibilidade e descrição -->
 
-    <article class="container-fluid  p-3 mb-2 bg-white text-black py-2">
+    <article class="container-fluid col-xl-4 p-3 mb-2 bg-white text-black py-2">
 
     <form action="exercicio-07.php" method="post">
 
