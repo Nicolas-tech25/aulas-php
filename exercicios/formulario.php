@@ -20,7 +20,7 @@
 
             <p>
                 <label for="produto">Nome do produto: </label>
-                <input required type="text" name="produto" id="produto" class="rounded w-25">
+                <input required type="text" name="produto" id="produto" class="rounded">
             </p>
 
             <p>
@@ -40,7 +40,7 @@
 
             <p>
                 <label for="preco">preco: </label>
-                <input required  type="number" name="preco" id="idade" min="100" max="10000" class="rounded w-50">
+                <input required  type="number" name="preco" id="idade" min="100" max="10000" class="rounded">
             </p>
 
             <div>
