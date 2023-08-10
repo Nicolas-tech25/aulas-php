@@ -18,21 +18,22 @@
     <p><a href="formulario.html">Voltar</a></p>
 
     <?php } else{
-        $nome = filter_input(INPUT_POST, "nome", FILTER_SANITIZE_SPECIAL_CHARS);
-        $preco = filter_input(INPUT_POST, "preco", FILTER_SANITIZE_NUMBER_INT);
+        $nome = filter_var($_POST['nome'], FILTER_SANITIZE_SPECIAL_CHARS);
+        $fabricante = filter_var($_POST['marca'], FILTER_SANITIZE_SPECIAL_CHARS);
+        $preco = filter_var($_POST['preco'], FILTER_SANITIZE_NUMBER_INT);
 
-        $descricao = filter_input(INPUT_POST , "descricao", FILTER_SANITIZE_SPECIAL_CHARS);
+        $descricao = filter_var($_POST[ 'descricao'], FILTER_SANITIZE_SPECIAL_CHARS);
         
-        $resposta = filter_var_array(
-            $_POST["resposta"] ?? [],
-            FILTER_SANITIZE_SPECIAL_CHARS
-        );
+        // $resposta = filter_var_array(
+        //     $_POST["resposta"] ?? [],
+        //     FILTER_SANITIZE_SPECIAL_CHARS
+        // );
     } ?>
 
     <ul>
         <li>Nome do produto: <?=$nome?></li>
-        <li>Fabricante: <?=$marca?></li>
-        <li>Preço: <?=implode("R$", $preco)?></li>
+        <li>Fabricante: <?=$fabricante?></li>
+        <li>Preço: <?=number_format($preco, 2,'.', '')?></li>
         <li>Disponibilidade: <?=implode("," , $disponibilidade)?></li>
         <li>Descrição: <?=$descricao?></li>
     </ul>
