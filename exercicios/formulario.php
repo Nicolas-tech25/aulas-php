@@ -1,3 +1,4 @@
+<?php require "../exercicios/exercicio-07.php"?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -24,12 +25,16 @@
 
             <p>
                 <label for="fabricante">Fabricante: </label>
-                <select name="marca" id="marca">
+                <select name="fabricante" id="fabricante">
                     <option value="#">Escolha:</option>
-                    <option value="nike">Nike</option>
-                    <option value="lacoste">Lacoste</option>
-                    <option value="armani">Armani</option>
-                    <option value="thommy">Thommy</option>
+                    <?php
+                        foreach($fabricantes as $fabricante){?>
+
+                            <option value="<?=$fabricante?>"><?=$fabricante?></option> 
+
+                    <?php } ?>
+                    
+
                 </select>
             </p>
 
