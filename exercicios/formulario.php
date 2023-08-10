@@ -12,10 +12,13 @@
 
     <h1>Mercadão</h1>
     <hr>
+
+    <!-- Card do bootstrap -->
+
     
     <!-- Formulário com nome do produto, fabricante, preço, disponibilidade e descrição -->
 
-    <article class="container">
+    <article class="container-fluid bg-primary">
 
     <form action="exercicio-07.php" method="post">
 
