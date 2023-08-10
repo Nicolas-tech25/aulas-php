@@ -9,7 +9,7 @@ body{
 }
 h1{text-align: center;}
 .container{
-    background-color: blue;
+    background-color: none;
     display: flex;
     width: 350px;
     margin: auto;

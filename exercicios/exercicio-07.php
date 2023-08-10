@@ -13,9 +13,21 @@
     <h2>Dados recebidos</h2>
 
     <?php
-    $marca = ["Nike","Lacoste","Armani","Thommy"];
+    if(empty($_POST["nome"]) || empty($_POST["preco"])){ ?>
+    <p>Você deve preencher nome e preço</p>
+    <p><a href="formulario.html">Voltar</a></p>
 
-    ?>
+    <?php } else{
+        $nome = filter_input(INPUT_POST, "nome", FILTER_SANITIZE_SPECIAL_CHARS);
+        $preco = filter_input(INPUT_POST, "preco", FILTER_SANITIZE_NUMBER_INT);
+
+        $descricao = filter_input(INPUT_POST , "descricao", FILTER_SANITIZE_SPECIAL_CHARS);
+        
+        $resposta = filter_var_array(
+            $_POST["resposta"] ?? [],
+            FILTER_SANITIZE_SPECIAL_CHARS
+        );
+    } ?>
 
     <ul>
         <li>Nome do produto: <?=$nome?></li>
