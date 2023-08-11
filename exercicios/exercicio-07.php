@@ -11,18 +11,31 @@
     <hr class="text-white">
     <?php
 
+    /* Aqui, este array não tem serventia.
+    Deveria estar na outra página. */
     $fabricantes = ["Nike","Lacoste","Armani","Thommy"];
 
+/* Esta também é uma forma correta de detectar se um formulário
+foi enviado/acionado, mas no seu exercício ela nem era necessária.
+Afinal, você colocou o action pra cá direto no formulário. */
   if($_SERVER["REQUEST_METHOD"] === "POST"){
+    /* Validação deu certo... */
     if(empty($_POST["produto"]) || empty($_POST["preco"])){ ?>
         <p>Você deve preencher nome e preço</p>
+        <!-- ... mas o link de retorno não (a extensão do formulário está errada) -->
         <p><a href="formulario.html">Voltar</a></p>
     
         <?php } else{
             $produto = filter_var($_POST['produto'], FILTER_SANITIZE_SPECIAL_CHARS);
             $fabricante = filter_var($_POST['fabricante'], FILTER_SANITIZE_SPECIAL_CHARS);
+
+            /* O ideal era usar filtros para números do tipo float, além de um segundo filtro
+            para aceitar dígitos/casas decimais */
             $preco = filter_var($_POST['preco'], FILTER_SANITIZE_NUMBER_INT);
+
             $descricao = filter_var($_POST[ 'descricao'], FILTER_SANITIZE_SPECIAL_CHARS);  
+
+            /* Faltou sanitizar, mas o ternário está correto. */
             $disponibilidade = isset($_POST['disponibilidade']) ? $_POST['disponibilidade'] : "Escolha uma opção";
         ?>
         <ul>
